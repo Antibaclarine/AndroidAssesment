@@ -22,17 +22,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getDetails(){
-        val retrofit = ApiClient.buildApiClient(ApiInterface::class.java)
+        val retrofit = ApiClient.ApiClient(ApiInterface::class.java)
         var request = retrofit.getTitle()
-        request.enqueue(object : Callback<List<Posts>> {
-            override fun onResponse(call: Call<List<Posts>>, response: Response<List<Posts>>) {
+        request.enqueue(object : Callback<List<Fetchdata>> {
+            override fun onResponse(call: Call<List<Fetchdata>>, response: Response<List<Posts>>) {
                 if (response.isSuccessful){
                     var postings = response.body()
                     Toast.makeText(baseContext,"${postings!!.size}postings", Toast.LENGTH_LONG).show()
                 }
             }
 
-            fun onFailure(call: Call<List<Posts>>, t: Throwable) {
+            fun onFailure(call: Call<List<Fetchdata>>, t: Throwable) {
             }
         })
     }

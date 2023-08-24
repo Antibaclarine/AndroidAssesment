@@ -1,3 +1,7 @@
+package com.example.assesment.viewModel
+
+import Post
+import PostRepository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
